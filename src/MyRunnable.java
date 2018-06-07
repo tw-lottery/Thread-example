@@ -1,14 +1,12 @@
 public class MyRunnable implements Runnable {
-    private int index;
+    private String content;
 
-    public MyRunnable() {
-        this.index = 0;
+    public MyRunnable(String content) {
+        this.content = content;
     }
 
     @Override
     public void run() {
-        while (Content.canPrint(index)) {
-            System.out.println(Thread.currentThread().getName() + " content is : " + Content.getContent(index++));
-        }
+        System.out.println(Thread.currentThread().getName() + " content is : " + this.content);
     }
 }
